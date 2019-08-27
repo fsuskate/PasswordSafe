@@ -10,7 +10,7 @@ namespace Security.Tests
         public void TestEncrypt()
         {
             var input = "Pa55w0rd";
-            var output = Security.Encryption.Encrypt(input, 5);
+            var output = Security.NaiveEncryption.Encrypt(input, 5);
 
             Assert.AreEqual("Uf::|5wi5", output);
         }
@@ -19,7 +19,7 @@ namespace Security.Tests
         public void TestDecrypt()
         {
             var input = "Uf::|5wi5";
-            var output = Security.Encryption.Decrypt(input);
+            var output = Security.NaiveEncryption.Decrypt(input);
 
             Assert.AreEqual("Pa55w0rd", output);
         }

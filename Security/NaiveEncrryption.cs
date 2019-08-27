@@ -1,6 +1,6 @@
 ﻿namespace Security
 {
-    public class Encryption
+    public class NaiveEncryption
     { 
        public static string Encrypt(string input, int rotateBy)
         {
