@@ -15,6 +15,7 @@ namespace PasswordSafeWeb.App_Start
     using System.Web.Http.Dependencies;
     using Ninject.Syntax;
     using System.Web.Http;
+    using PasswordSafeWeb.Database;
 
     // This code is pulled from http://www.peterprovost.org/blog/2012/06/19/adding-ninject-to-web-api/
     // Provides a Ninject implementation of IDependencyScope
@@ -124,7 +125,9 @@ namespace PasswordSafeWeb.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<IEncryptionService>().To<EncryptionService>(); // Registering Types    
-            kernel.Bind<IProvideEncryption>().To<NaiveEncryptionProvider>();            
+            kernel.Bind<IProvideEncryption>().To<NaiveEncryptionProvider>();
+            kernel.Bind<IStorageService>().To<StorageService>();
+            kernel.Bind<IStoreData>().To<XmlStorage>();
         }
     }
 }

@@ -13,14 +13,6 @@ namespace PasswordSafeWeb.Services
             _encrytionProvider = provider;
         }
 
-        /// <summary>
-        /// Default constructor until DI is wired up
-        /// </summary>
-        //public EncryptionService()
-        //{
-        //    _encrytionProvider = new NaiveEncryptionProvider();
-        //}
-
         public string Encrypt(string input, Dictionary<string, string> parameters)
         {
             return _encrytionProvider.Encrypt(input, parameters);

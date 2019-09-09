@@ -13,14 +13,6 @@ namespace PasswordSafeWeb.Controllers
             _encryptionService = encryptionService;
         }
 
-        /// <summary>
-        /// Default constructor is here until Dependency Injection is wired up.
-        /// </summary>
-        //public EncryptionController()
-        //{
-        //    _encryptionService = new EncryptionService();
-        //}
-
         [HttpGet]
         [Route("Encrypt")]
         public string Encrypt(string input, int rotateBy)
